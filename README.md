@@ -34,7 +34,10 @@ https://docs.rs/tinyrick_extras/
 # RUNTIME REQUIREMENTS
 
 * [Rust](https://www.rust-lang.org/en-US/) 1.30+
-* [clippy](https://github.com/rust-lang-nursery/rust-clippy)
+
+## Recommended
+
+* [clippy](https://github.com/rust-lang-nursery/rust-clippy) when running the `tinyrick_extras::clippy` task.
 
 # CONTRIBUTING
 
