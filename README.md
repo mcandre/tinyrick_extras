@@ -19,7 +19,7 @@ Buzz
 
 # ABOUT
 
-`tinyrick_extras` defines some common tasks, such as unit tests, linting, generating API documentation, publishing packages, installing and uninstalling packages. Boom. Take what works for your build workflow, leave the rest.
+tinyrick_extras defines some common tasks, such as unit tests, linting, generating API documentation, publishing packages, installing and uninstalling packages, for your [tinyrick](https://github.com/mcandre/tinyrick) projects. Boom. Take what works for your build workflow, leave the rest.
 
 # CRATE
 
