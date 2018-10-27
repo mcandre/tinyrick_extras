@@ -1,0 +1,24 @@
+[package]
+
+name = "tinyrick_extras"
+description = "common tasks for tinyrick projects"
+version = "0.0.1"
+authors = ["Andrew Pennebaker <andrew.pennebaker@gmail.com>"]
+license = "BSD-2-Clause"
+homepage = "https://github.com/mcandre/tinyrick_extras"
+documentation = "https://docs.rs/releases/search?query=tinyrick_extras"
+
+[dependencies]
+tinyrick = "0.0.6"
+
+[features]
+letmeout = []
+
+[lib]
+name = "tinyrick_extras"
+path = "src/lib/tinyrick_extras.rs"
+
+[[bin]]
+name = "rick"
+path = "rick.rs"
+required-features = ["letmeout"]
