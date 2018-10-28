@@ -13,7 +13,7 @@ tinyrick_extras' own compilation process is compatible with standard cargo. We w
 $ tinyrick lint
 ```
 
-# UNIT + INTEGRATION TEST
+# RUN ALL TESTS
 
 ```console
 $ tinyrick test
