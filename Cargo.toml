@@ -2,7 +2,7 @@
 
 name = "tinyrick_extras"
 description = "common tasks for tinyrick projects"
-version = "0.0.2"
+version = "0.0.3"
 authors = ["Andrew Pennebaker <andrew.pennebaker@gmail.com>"]
 license = "BSD-2-Clause"
 homepage = "https://github.com/mcandre/tinyrick_extras"
