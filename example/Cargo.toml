@@ -7,11 +7,11 @@ authors = ["Andrew Pennebaker <andrew.pennebaker@gmail.com>"]
 license = "BSD-2-Clause"
 
 [dependencies]
-tinyrick = "0.0.8"
-tinyrick_extras = { version = "*", path = "..", optional = true }
+tinyrick = { version = "0.0.8", optional = true }
+tinyrick_extras = { version = "0.0.2", optional = true }
 
 [features]
-letmeout = ["tinyrick_extras"]
+letmeout = ["tinyrick", "tinyrick_extras"]
 
 [lib]
 path = "src/lib/fizzy.rs"
