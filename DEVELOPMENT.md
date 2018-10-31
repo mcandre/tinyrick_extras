@@ -5,7 +5,11 @@ tinyrick_extras' own compilation process is compatible with standard cargo. We w
 # BUILDTIME REQUIREMENTS
 
 * [Rust](https://www.rust-lang.org/en-US/) 1.30+
+
+## Recommended
+
 * [clippy](https://github.com/rust-lang-nursery/rust-clippy)
+* [tinyrick](https://github.com/mcandre/tinyrick) (e.g., `cargo install tinyrick`)
 
 # LINT
 
@@ -13,25 +17,13 @@ tinyrick_extras' own compilation process is compatible with standard cargo. We w
 $ tinyrick lint
 ```
 
-# RUN ALL TESTS
+# TEST
 
 ```console
 $ tinyrick test
 ```
 
-# UNIT TEST
-
-```console
-$ tinyrick unit_test
-```
-
-# INTEGRATION TEST
-
-```console
-$ tinyrick integration_test
-```
-
-# GENERATE DOCUMENTATION
+# DOCUMENT API
 
 ```console
 $ tinyrick doc

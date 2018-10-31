@@ -7,12 +7,23 @@ pub fn clippy() {
   tinyrick::exec!("cargo", &["clippy"]);
 }
 
-/// Compile project
-pub fn build() {
+/// Build debug binaries
+pub fn build_debug() {
   tinyrick::exec!("cargo", &["build"]);
 }
 
-/// Generate documentation
+/// Build release binaries
+pub fn build_release() {
+  tinyrick::exec!("cargo", &["build", "--release"]);
+}
+
+/// Build all binaries
+pub fn build() {
+  tinyrick::deps(build_debug);
+  tinyrick::deps(build_release);
+}
+
+/// Generate Rust API documentation
 pub fn doc() {
   tinyrick::exec!("cargo", &["doc"]);
 }
@@ -23,7 +34,7 @@ pub fn install_binaries() {
 }
 
 /// Uninstall artifacts
-pub fn uninstall() {
+pub fn uninstall_binaries() {
   tinyrick::exec!("cargo", &["uninstall"]);
 }
 

@@ -9,16 +9,15 @@ homepage = "https://github.com/mcandre/tinyrick_extras"
 documentation = "https://docs.rs/releases/search?query=tinyrick_extras"
 
 [dependencies]
-tinyrick = "0.0.6"
+tinyrick = "0.0.8"
 
 [features]
 letmeout = []
 
 [lib]
 name = "tinyrick_extras"
-path = "src/lib/tinyrick_extras.rs"
 
 [[bin]]
-name = "rick"
-path = "rick.rs"
+name = "tinyrick"
+path = "tinyrick.rs"
 required-features = ["letmeout"]

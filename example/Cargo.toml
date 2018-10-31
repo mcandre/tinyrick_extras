@@ -7,13 +7,11 @@ authors = ["Andrew Pennebaker <andrew.pennebaker@gmail.com>"]
 license = "BSD-2-Clause"
 
 [dependencies]
-tinyrick = "0.0.5"
+tinyrick = "0.0.8"
 tinyrick_extras = { version = "*", path = "..", optional = true }
-zip = { version = "0.4.2", optional = true }
-glob = { version = "0.2.11", optional = true }
 
 [features]
-letmeout = ["tinyrick_extras", "zip", "glob"]
+letmeout = ["tinyrick_extras"]
 
 [lib]
 path = "src/lib/fizzy.rs"
@@ -23,6 +21,6 @@ name = "fizzbuzz"
 path = "src/bin/fizzbuzz.rs"
 
 [[bin]]
-name = "rick"
-path = "rick.rs"
+name = "tinyrick"
+path = "tinyrick.rs"
 required-features = ["letmeout"]
