@@ -37,7 +37,9 @@ https://docs.rs/tinyrick_extras/
 
 ## Recommended
 
-* [clippy](https://github.com/rust-lang-nursery/rust-clippy) when running the `tinyrick_extras::clippy` task.
+* [ASDF](https://asdf-vm.com/) 0.10 (run `asdf reshim` after each Rust application binary installation)
+* [direnv](https://direnv.net/) 2
+* [cargo-cache](https://crates.io/crates/cargo-cache)
 
 # CONTRIBUTING
 
