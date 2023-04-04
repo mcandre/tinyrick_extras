@@ -29,7 +29,7 @@ https://crates.io/crates/tinyrick_extras
 
 # API DOCUMENTATION
 
-https://docs.rs/tinyrick_extras/
+https://docs.rs/tinyrick_extras/latest/tinyrick_extras/
 
 # RUNTIME REQUIREMENTS
 
