@@ -4,7 +4,9 @@ tinyrick_extras' own compilation process is compatible with standard cargo. We w
 
 # BUILDTIME REQUIREMENTS
 
-* [Rust](https://www.rust-lang.org/en-US/) 1.68.2+ with `rustup component add clippy rustfmt` and `cargo install cargo-audit@0.17.5 tinyrick@0.0.9`
+* [Rust](https://www.rust-lang.org/en-US/) 1.68.2+
+* a POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html) implementation (e.g., bash, ksh, zsh)
+* Provision additional dev tools with `./install`
 
 ## Recommended
 
