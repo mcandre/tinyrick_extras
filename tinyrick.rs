@@ -23,11 +23,17 @@ fn rustfmt() {
     tinyrick_extras::rustfmt();
 }
 
+/// Run unmake
+fn unmake() {
+    tinyrick::exec!("unmake", &["makefile"]);
+}
+
 /// Validate documentation and run linters
 fn lint() {
     tinyrick::deps(doc);
     tinyrick::deps(clippy);
     tinyrick::deps(rustfmt);
+    tinyrick::deps(unmake);
 }
 
 /// Doc, lint, and run tests
@@ -69,6 +75,7 @@ fn main() {
       audit,
       clippy,
       rustfmt,
+      unmake,
       lint,
       test,
       publish,

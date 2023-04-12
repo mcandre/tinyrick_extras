@@ -5,8 +5,8 @@ tinyrick_extras' own compilation process is compatible with standard cargo. We w
 # BUILDTIME REQUIREMENTS
 
 * [Rust](https://www.rust-lang.org/en-US/) 1.68.2+
-* a POSIX compatible [sh](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/sh.html) implementation (e.g., bash, ksh, zsh)
-* Provision additional dev tools with `./install`
+* a POSIX compliant [make](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/make.html) implementation (e.g. GNU make, BSD make, etc.)
+* Provision additional dev tools with `make`
 
 ## Recommended
 
