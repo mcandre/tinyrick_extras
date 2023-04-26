@@ -7,4 +7,5 @@ all:
 	@cargo install --force \
 		cargo-audit@0.17.5 \
 		crit@0.0.6 \
-		tinyrick@0.0.11
+		tinyrick@0.0.11 \
+		unmake@0.0.6
