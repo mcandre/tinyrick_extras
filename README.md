@@ -32,6 +32,10 @@ https://crates.io/crates/tinyrick_extras
 
 https://docs.rs/tinyrick_extras/latest/tinyrick_extras/
 
+# LICENSE
+
+BSD-2-Clause
+
 # RUNTIME REQUIREMENTS
 
 * [Rust](https://www.rust-lang.org/en-US/) 1.68.2+
