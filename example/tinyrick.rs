@@ -1,5 +1,7 @@
 //! Build configuration
 
+use std::path;
+
 extern crate tinyrick;
 extern crate tinyrick_extras;
 
@@ -44,6 +46,21 @@ fn build() {
   tinyrick_extras::build();
 }
 
+/// banner generates artifact labels.
+fn banner() -> String {
+    format!("{}-{}", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"))
+}
+
+fn archive() {
+    tinyrick_extras::archive(path::Path::new(".crit").join("bin").display().to_string(), banner().to_string());
+}
+
+/// Prepare cross-platform release media.
+fn port() {
+    tinyrick_extras::crit(vec!["-b".to_string(), banner()]);
+    tinyrick::deps(archive);
+}
+
 /// Publish to crate repository
 fn publish() {
   tinyrick_extras::publish();
@@ -66,6 +83,8 @@ fn main() {
     install,
     uninstall,
     test,
+    archive,
+    port,
     publish,
     clean
   );
