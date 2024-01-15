@@ -8,5 +8,5 @@ all:
 		rustfmt
 	cargo install --force \
 		cargo-audit \
-		tinyrick@0.0.13 \
+		tinyrick@0.0.14 \
 		unmake@0.0.16
