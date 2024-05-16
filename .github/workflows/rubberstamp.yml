@@ -5,9 +5,9 @@
 #
 name: "Rubberstamp"
 on: # yamllint disable-line rule:truthy
+  push:
+    branches: ["test-rubberstamp"]
   schedule:
-  # Once every 15 minutes
-  # - cron: "*/15 * * * *"
   # Once a month
   - cron: "0 0 * */1 *"
 jobs:
