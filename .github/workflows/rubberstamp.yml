@@ -5,8 +5,7 @@
 #
 name: "Rubberstamp"
 on: # yamllint disable-line rule:truthy
-  # push:
-  #   branches: ["test-rubberstamp"]
+  workflow_call:
   schedule:
   # Once a month
   - cron: "0 0 * */1 *"
