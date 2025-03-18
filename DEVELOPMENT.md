@@ -4,7 +4,7 @@ tinyrick_extras' own compilation process is compatible with standard cargo. We w
 
 # BUILDTIME REQUIREMENTS
 
-* [GNU](https://www.gnu.org/software/make/) / [BSD](https://man.freebsd.org/cgi/man.cgi?make(1)) make
+* [POSIX](https://pubs.opengroup.org/onlinepubs/9799919799/) compatible [make](https://en.wikipedia.org/wiki/Make_(software))
 * [Rust](https://www.rust-lang.org/en-US/) 1.75.0+
 * Provision additional dev tools with `make -j 4`
 
@@ -13,7 +13,7 @@ tinyrick_extras' own compilation process is compatible with standard cargo. We w
 * [ASDF](https://asdf-vm.com/) 0.10 (run `asdf reshim` after provisioning)
 * [cargo-cache](https://crates.io/crates/cargo-cache)
 * [direnv](https://direnv.net/) 2
-* POSIX compatible [tar](https://pubs.opengroup.org/onlinepubs/7908799/xcu/tar.html)
+* [GNU](https://www.gnu.org/)/[BSD](https://en.wikipedia.org/wiki/Berkeley_Software_Distribution) [make](https://en.wikipedia.org/wiki/Make_(software))
 
 # SECURITY AUDIT
 

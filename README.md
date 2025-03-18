@@ -46,7 +46,6 @@ BSD-2-Clause
 * [cargo-cache](https://crates.io/crates/cargo-cache)
 * [crit](https://github.com/mcandre/crit) ports Rust applications
 * [direnv](https://direnv.net/) 2
-* POSIX compatible [tar](https://pubs.opengroup.org/onlinepubs/7908799/xcu/tar.html)
 
 # CONTRIBUTING
 
