@@ -19,5 +19,6 @@ jobs:
     - uses: "dtolnay/rust-toolchain@stable"
       with:
         toolchain: "1.86.0"
-    - run: "make -j 4"
+    - name: "provision dev tools"
+      run: "make -j 4"
     - run: "tinyrick test"
