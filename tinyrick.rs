@@ -42,12 +42,14 @@ fn test() {
     tinyrick::deps(lint);
     tinyrick_extras::unit_test();
 
-    assert!(tinyrick::exec_mut!("tinyrick", &["build", "uninstall"])
-        .current_dir("example")
-        .env("VERBOSE", "1")
-        .status()
-        .unwrap()
-        .success());
+    assert!(
+        tinyrick::exec_mut!("tinyrick", &["build", "uninstall"])
+            .current_dir("example")
+            .env("VERBOSE", "1")
+            .status()
+            .unwrap()
+            .success()
+    );
 }
 
 /// Build: Doc, lint, test, and compile

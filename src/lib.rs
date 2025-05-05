@@ -40,10 +40,12 @@ pub fn install_binaries() {
 
 /// Generate cross-platform binaries.
 pub fn crit(args: Vec<String>) {
-    assert!(tinyrick::exec_mut!("crit", args)
-        .status()
-        .unwrap()
-        .success());
+    assert!(
+        tinyrick::exec_mut!("crit", args)
+            .status()
+            .unwrap()
+            .success()
+    );
 }
 
 /// Compress binaries.
