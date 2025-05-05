@@ -10,12 +10,14 @@ on: # yamllint disable-line rule:truthy
   # - cron: "*/5 * * * *"
   # Once a day
   - cron: "0 0 * * *"
+  workflow_dispatch:
 jobs:
   Test-Futureproof-OS:
     runs-on: "ubuntu-latest"
     steps:
     - uses: "actions/checkout@v4"
-    - run: "sudo apt-get update"
-    - run: "sudo apt-get install -y cargo"
-    - run: "make -j 4 crates"
+    - uses: "dtolnay/rust-toolchain@stable"
+      with:
+        toolchain: "1.86.0"
+    - run: "make -j 4"
     - run: "tinyrick test"

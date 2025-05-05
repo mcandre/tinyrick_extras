@@ -5,7 +5,7 @@ tinyrick_extras' own compilation process is compatible with standard cargo. We w
 # BUILDTIME REQUIREMENTS
 
 * [POSIX](https://pubs.opengroup.org/onlinepubs/9799919799/) compatible [make](https://en.wikipedia.org/wiki/Make_(software))
-* [Rust](https://www.rust-lang.org/en-US/) 1.75.0+
+* [Rust](https://www.rust-lang.org/en-US/) 1.86.0+
 * Provision additional dev tools with `make -j 4`
 
 ## Recommended
