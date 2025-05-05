@@ -15,5 +15,5 @@ jobs:
       with:
         toolchain: "1.86.0"
     - name: "provision audit tools"
-      run: "make -f install.mk crates"
-    - run: "make audit"
+      run: "make crates"
+    - run: "tinyrick audit"
