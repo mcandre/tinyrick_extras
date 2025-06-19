@@ -18,6 +18,11 @@ fn cargo_check() {
     tinyrick_extras::cargo_check();
 }
 
+/// Clean workspaces
+fn clean() {
+    tinyrick_extras::clean_cargo();
+}
+
 /// Run clippy
 fn clippy() {
     tinyrick_extras::clippy();
@@ -57,11 +62,6 @@ fn build() {
 /// Publish to crate repository
 fn publish() {
     tinyrick_extras::publish();
-}
-
-/// Clean workspaces
-fn clean() {
-    tinyrick_extras::clean_cargo();
 }
 
 /// CLI entrypoint

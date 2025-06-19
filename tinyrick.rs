@@ -3,6 +3,9 @@
 extern crate tinyrick;
 extern crate tinyrick_extras;
 
+use std::fs;
+use std::path;
+
 /// Security audit
 fn audit() {
     tinyrick_extras::cargo_audit();
@@ -21,7 +24,21 @@ fn cargo_check() {
 
 /// Clean workspaces
 fn clean() {
+    tinyrick::deps(clean_cargo);
+    tinyrick::deps(clean_example);
+}
+
+/// Clean cargo
+fn clean_cargo() {
     tinyrick_extras::clean_cargo();
+}
+
+/// Clean example
+fn clean_example() {
+    let pth_cargo_lock = path::Path::new("example").join("Cargo.lock");
+    let pth_target = path::Path::new("example").join("target");
+    fs::remove_file(pth_cargo_lock).unwrap();
+    fs::remove_dir_all(pth_target).unwrap();
 }
 
 /// Run clippy
@@ -83,6 +100,8 @@ fn main() {
         audit,
         cargo_check,
         clean,
+        clean_cargo,
+        clean_example,
         clippy,
         doc,
         lint,
