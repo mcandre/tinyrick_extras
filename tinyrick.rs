@@ -37,8 +37,8 @@ fn clean_cargo() {
 fn clean_example() {
     let pth_cargo_lock = path::Path::new("example").join("Cargo.lock");
     let pth_target = path::Path::new("example").join("target");
-    fs::remove_file(pth_cargo_lock).unwrap();
-    fs::remove_dir_all(pth_target).unwrap();
+    let _ = fs::remove_file(pth_cargo_lock);
+    let _ = fs::remove_dir_all(pth_target);
 }
 
 /// Run clippy
