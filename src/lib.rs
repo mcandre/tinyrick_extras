@@ -2,6 +2,16 @@
 
 extern crate tinyrick;
 
+/// Run cargo audit
+pub fn cargo_audit() {
+    tinyrick::exec!("cargo", &["audit"]);
+}
+
+/// Run cargo check
+pub fn cargo_check() {
+    tinyrick::exec!("cargo", &["check"]);
+}
+
 /// Run clippy
 pub fn clippy() {
     tinyrick::exec!("cargo", &["clippy"]);

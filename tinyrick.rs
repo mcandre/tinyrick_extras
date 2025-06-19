@@ -3,14 +3,25 @@
 extern crate tinyrick;
 extern crate tinyrick_extras;
 
-/// Generate documentation
-fn doc() {
+/// Security audit
+fn audit() {
+    tinyrick_extras::cargo_audit();
+}
+
+/// Build: Doc, lint, test, and compile
+fn build() {
+    tinyrick::deps(test);
     tinyrick_extras::build();
 }
 
-/// Security audit
-fn audit() {
-    tinyrick::exec!("cargo", &["audit"]);
+/// Run cargo check
+fn cargo_check() {
+    tinyrick_extras::cargo_check();
+}
+
+/// Clean workspaces
+fn clean() {
+    tinyrick_extras::clean_cargo();
 }
 
 /// Run clippy
@@ -18,23 +29,23 @@ fn clippy() {
     tinyrick_extras::clippy();
 }
 
-/// Run rustfmt
-fn rustfmt() {
-    tinyrick_extras::rustfmt();
-}
-
-/// Run unmake
-fn unmake() {
-    tinyrick::exec!("unmake", &["."]);
-    tinyrick::exec!("unmake", &["-n", "."]);
+/// Generate documentation
+fn doc() {
+    tinyrick_extras::build();
 }
 
 /// Validate documentation and run linters
 fn lint() {
-    tinyrick::deps(doc);
+    tinyrick::deps(cargo_check);
     tinyrick::deps(clippy);
+    tinyrick::deps(doc);
     tinyrick::deps(rustfmt);
     tinyrick::deps(unmake);
+}
+
+/// Publish to crate repository
+fn publish() {
+    tinyrick_extras::publish();
 }
 
 /// Doc, lint, and run tests
@@ -52,20 +63,15 @@ fn test() {
     );
 }
 
-/// Build: Doc, lint, test, and compile
-fn build() {
-    tinyrick::deps(test);
-    tinyrick_extras::build();
+/// Run rustfmt
+fn rustfmt() {
+    tinyrick_extras::rustfmt();
 }
 
-/// Publish to crate repository
-fn publish() {
-    tinyrick_extras::publish();
-}
-
-/// Clean workspaces
-fn clean() {
-    tinyrick_extras::clean_cargo();
+/// Run unmake
+fn unmake() {
+    tinyrick::exec!("unmake", &["."]);
+    tinyrick::exec!("unmake", &["-n", "."]);
 }
 
 /// CLI entrypoint
@@ -73,15 +79,16 @@ fn main() {
     tinyrick::phony!(clean);
 
     tinyrick::wubba_lubba_dub_dub!(
-      build;
-      doc,
-      audit,
-      clippy,
-      rustfmt,
-      unmake,
-      lint,
-      test,
-      publish,
-      clean
+        build;
+        audit,
+        cargo_check,
+        clean,
+        clippy,
+        doc,
+        lint,
+        publish,
+        rustfmt,
+        test,
+        unmake
     );
 }
