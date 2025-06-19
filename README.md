@@ -39,6 +39,7 @@ BSD-2-Clause
 # RUNTIME REQUIREMENTS
 
 * [Rust](https://www.rust-lang.org/en-US/) 1.87.0+
+* [tinyrck](https://github.com/mcandre/tinyrick) 0.0.15
 
 ## Recommended
 

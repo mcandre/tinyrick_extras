@@ -10,7 +10,7 @@ homepage = "https://github.com/mcandre/tinyrick_extras"
 documentation = "https://docs.rs/releases/search?query=tinyrick_extras"
 
 [dependencies]
-tinyrick = "=0.0.14"
+tinyrick = "=0.0.15"
 
 [features]
 letmeout = []
