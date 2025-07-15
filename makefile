@@ -9,7 +9,7 @@ crates:
 	cargo install --force \
 		cargo-audit \
 		tinyrick@0.0.15 \
-		unmake@0.0.20
+		unmake@0.0.21
 
 rustup-components:
 	rustup component add \
