@@ -10,6 +10,7 @@ tinyrick_extras' own compilation process is compatible with standard cargo. We w
 
 ## Recommended
 
+* a UNIX-like environment (e.g. [WSL](https://learn.microsoft.com/en-us/windows/wsl/))
 * [ASDF](https://asdf-vm.com/) 0.10 (run `asdf reshim` after provisioning)
 * [cargo-cache](https://crates.io/crates/cargo-cache)
 * [direnv](https://direnv.net/) 2
