@@ -38,12 +38,12 @@ BSD-2-Clause
 
 # RUNTIME REQUIREMENTS
 
-* [Rust](https://www.rust-lang.org/en-US/) 1.87.0+
+* [Rust](https://www.rust-lang.org/en-US/)
 * [tinyrck](https://github.com/mcandre/tinyrick) 0.0.15
 
 ## Recommended
 
-* [ASDF](https://asdf-vm.com/) 0.10 (run `asdf reshim` after each Rust application binary installation)
+* [ASDF](https://asdf-vm.com/) 0.18 (run `asdf reshim` after each Rust application binary installation)
 * [cargo-cache](https://crates.io/crates/cargo-cache)
 * [crit](https://github.com/mcandre/crit) ports Rust applications
 * [direnv](https://direnv.net/) 2
