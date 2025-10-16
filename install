@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+cargo install --force \
+    cargo-audit \
+    cargo-cache \
+    cargo-edit \
+    crit@0.0.9 \
+    cross@0.2.5 \
+    unmake@0.0.21
+
+rustup component add \
+    clippy \
+    rustfmt

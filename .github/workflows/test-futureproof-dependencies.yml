@@ -20,7 +20,7 @@ jobs:
       with:
         toolchain: "1.87.0"
     - name: "provision dev tools"
-      run: "make -f install.mk -j 4 --output-sync"
+      run: "./install"
     - run: |
         cargo upgrade
         cargo update
