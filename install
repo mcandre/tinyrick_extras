@@ -6,8 +6,7 @@ cargo install --force \
     cargo-cache \
     cargo-edit \
     crit@0.0.10 \
-    tinyrick@0.0.17 \
-    unmake@0.0.21
+    tinyrick@0.0.17
 
 cargo install --force \
     cross \
