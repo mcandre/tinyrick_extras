@@ -57,7 +57,6 @@ fn lint() {
     tinyrick::deps(clippy);
     tinyrick::deps(doc);
     tinyrick::deps(rustfmt);
-    tinyrick::deps(unmake);
 }
 
 /// Publish to crate repository
@@ -85,12 +84,6 @@ fn rustfmt() {
     tinyrick_extras::rustfmt();
 }
 
-/// Run unmake
-fn unmake() {
-    tinyrick::exec!("unmake", &["."]);
-    tinyrick::exec!("unmake", &["-n", "."]);
-}
-
 /// CLI entrypoint
 fn main() {
     tinyrick::phony!(clean);
@@ -107,7 +100,6 @@ fn main() {
         lint,
         publish,
         rustfmt,
-        test,
-        unmake
+        test
     );
 }
