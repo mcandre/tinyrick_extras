@@ -13,6 +13,11 @@ fn audit() {
     tinyrick_extras::cargo_audit();
 }
 
+/// banner generates artifact labels.
+fn banner() -> String {
+    format!("{}-{}", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"))
+}
+
 /// Run cargo check
 fn cargo_check() {
     tinyrick_extras::cargo_check();
@@ -20,7 +25,18 @@ fn cargo_check() {
 
 /// Clean workspaces
 fn clean() {
+    tinyrick::deps(clean_ports);
     tinyrick_extras::clean_cargo();
+}
+
+/// Clean precompiled binaries
+fn clean_ports() {
+    assert!(
+        tinyrick::exec_mut!("crit", &["-c"])
+            .status()
+            .unwrap()
+            .success()
+    );
 }
 
 /// Run clippy
@@ -48,7 +64,6 @@ fn uninstall() {
 fn test() {
     tinyrick::deps(lint);
     tinyrick::deps(install);
-
     tinyrick_extras::unit_test();
     tinyrick::exec!("fizzbuzz");
 }
@@ -57,6 +72,13 @@ fn test() {
 fn build() {
     tinyrick::deps(test);
     tinyrick_extras::build();
+}
+
+/// Prepare cross-platform release media.
+fn port() {
+    let b = &banner();
+    tinyrick_extras::crit(vec!["-b".to_string(), b.to_string()]);
+    tinyrick_extras::chandler(".crit/bin", b);
 }
 
 /// Publish to crate repository
@@ -74,9 +96,11 @@ fn main() {
         audit,
         cargo_check,
         clean,
+        clean_ports,
         clippy,
         install,
         lint,
+        port,
         publish,
         test,
         uninstall

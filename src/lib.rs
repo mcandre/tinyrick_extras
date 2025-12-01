@@ -2,23 +2,29 @@
 
 extern crate tinyrick;
 
-/// Compress binaries.
+/// Compress release media with chandler.
 ///
 /// artifacts_path denotes a build directory root,
 /// where a software project houses porting artifacts.
 ///
 /// port_basename denotes an archive directory root within the artifacts_path,
 /// generally of the form "<app-name>-<version>".
-pub fn archive(artifacts_path: String, port_basename: String) {
-    let artifacts_path_str: &str = &artifacts_path;
-    let port_basename_str: &str = &port_basename;
-    let archive_basename: &str = &format!("{}.tgz", port_basename_str);
+pub fn chandler(artifacts_path: &str, port_basename: &str) {
+    let archive_basename: &str = &format!("{}.tgz", port_basename);
     assert!(
-        tinyrick::exec_mut!("tar", &["czf", archive_basename, port_basename_str])
-            .current_dir(artifacts_path_str)
-            .status()
-            .unwrap()
-            .success()
+        tinyrick::exec_mut!(
+            "chandler",
+            &[
+                "-C",
+                artifacts_path,
+                "-czf",
+                archive_basename,
+                port_basename
+            ]
+        )
+        .status()
+        .unwrap()
+        .success()
     );
 }
 
@@ -59,7 +65,7 @@ pub fn clippy() {
 }
 
 /// Generate cross-platform binaries.
-pub fn crit(args: Vec<String>) {
+pub fn crit(args: &[&str]) {
     assert!(
         tinyrick::exec_mut!("crit", args)
             .status()

@@ -45,6 +45,7 @@ BSD-2-Clause
 
 * [ASDF](https://asdf-vm.com/) 0.18 (run `asdf reshim` after each Rust application binary installation)
 * [cargo-cache](https://crates.io/crates/cargo-cache)
+* [chandler](https://github.com/mcandre/chandler)
 * [crit](https://github.com/mcandre/crit) ports Rust applications
 * [direnv](https://direnv.net/) 2
 
