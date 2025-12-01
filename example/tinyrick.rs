@@ -77,7 +77,7 @@ fn build() {
 /// Prepare cross-platform release media.
 fn port() {
     let b = &banner();
-    tinyrick_extras::crit(vec!["-b".to_string(), b.to_string()]);
+    tinyrick_extras::crit(&vec!["-b", b]);
     tinyrick_extras::chandler(".crit/bin", b);
 }
 
