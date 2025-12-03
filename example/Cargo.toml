@@ -9,7 +9,7 @@ license = "BSD-2-Clause"
 [dependencies]
 ctor = { version = "0.6.2", optional = true }
 die = { version = "0.2.0", optional = true }
-tinyrick = { version = "*", path = "../../tinyrick", optional = true }
+tinyrick = { version = "0.0.20", optional = true }
 tinyrick_extras = { version = "*", path = "..", optional = true }
 tinyrick_macros = { version = "0.0.3", optional = true }
 tinyrick_models = { version = "0.0.2", optional = true }
