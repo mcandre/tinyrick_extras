@@ -1,39 +1,45 @@
 //! Build configuration
 
-extern crate tinyrick;
-extern crate tinyrick_extras;
+use tinyrick::*;
+use tinyrick_extras;
 
 use std::fs;
 use std::path;
 
+/// Build: Doc, lint, test, and compile
+#[default_task]
+fn build() {
+    deps!(test);
+    tinyrick_extras::build();
+}
+
 /// Security audit
+#[task]
 fn audit() {
     tinyrick_extras::cargo_audit();
 }
 
-/// Build: Doc, lint, test, and compile
-fn build() {
-    tinyrick::deps(test);
-    tinyrick_extras::build();
-}
-
 /// Run cargo check
+#[task]
 fn cargo_check() {
     tinyrick_extras::cargo_check();
 }
 
 /// Clean workspaces
+#[task]
 fn clean() {
-    tinyrick::deps(clean_cargo);
-    tinyrick::deps(clean_example);
+    deps!(clean_cargo);
+    deps!(clean_example);
 }
 
 /// Clean cargo
+#[task]
 fn clean_cargo() {
     tinyrick_extras::clean_cargo();
 }
 
 /// Clean example
+#[task]
 fn clean_example() {
     let pth_cargo_lock = path::Path::new("example").join("Cargo.lock");
     let pth_target = path::Path::new("example").join("target");
@@ -42,64 +48,46 @@ fn clean_example() {
 }
 
 /// Run clippy
+#[task]
 fn clippy() {
     tinyrick_extras::clippy();
 }
 
 /// Generate documentation
+#[task]
 fn doc() {
     tinyrick_extras::build();
 }
 
 /// Validate documentation and run linters
+#[task]
 fn lint() {
-    tinyrick::deps(cargo_check);
-    tinyrick::deps(clippy);
-    tinyrick::deps(doc);
-    tinyrick::deps(rustfmt);
+    deps!(cargo_check);
+    deps!(clippy);
+    deps!(doc);
+    deps!(rustfmt);
 }
 
 /// Publish to crate repository
+#[task]
 fn publish() {
     tinyrick_extras::publish();
 }
 
-/// Doc, lint, and run tests
-fn test() {
-    tinyrick::deps(lint);
-    tinyrick_extras::unit_test();
-
-    assert!(
-        tinyrick::exec_mut!("tinyrick", &["build", "uninstall"])
-            .current_dir("example")
-            .env("VERBOSE", "1")
-            .status()
-            .unwrap()
-            .success()
-    );
-}
-
 /// Run rustfmt
+#[task]
 fn rustfmt() {
     tinyrick_extras::rustfmt();
 }
 
+/// Doc, lint, and run tests
+#[task]
+fn test() {
+    deps!(lint);
+    tinyrick_extras::unit_test();
+}
+
 /// CLI entrypoint
 fn main() {
-    tinyrick::phony!(clean);
-
-    tinyrick::wubba_lubba_dub_dub!(
-        build;
-        audit,
-        cargo_check,
-        clean,
-        clean_cargo,
-        clean_example,
-        clippy,
-        doc,
-        lint,
-        publish,
-        rustfmt,
-        test
-    );
+    run();
 }

@@ -1,14 +1,23 @@
 //! Build configuration
 
-extern crate tinyrick;
-extern crate tinyrick_extras;
+use tinyrick::*;
+use tinyrick_extras;
+
+/// Build: Doc, lint, test, and compile
+#[default_task]
+fn build() {
+    deps!(test);
+    tinyrick_extras::build();
+}
 
 /// Generate documentation
+#[task]
 fn doc() {
     tinyrick_extras::build();
 }
 
 /// Security audit
+#[task]
 fn audit() {
     tinyrick_extras::cargo_audit();
 }
@@ -19,90 +28,73 @@ fn banner() -> String {
 }
 
 /// Run cargo check
+#[task]
 fn cargo_check() {
     tinyrick_extras::cargo_check();
 }
 
 /// Clean workspaces
+#[task]
 fn clean() {
-    tinyrick::deps(clean_ports);
+    deps!(clean_ports);
     tinyrick_extras::clean_cargo();
 }
 
 /// Clean precompiled binaries
+#[task]
 fn clean_ports() {
-    assert!(
-        tinyrick::exec_mut!("crit", &["-c"])
-            .status()
-            .unwrap()
-            .success()
-    );
+    exec!("crit", "-c");
 }
 
 /// Run clippy
+#[task]
 fn clippy() {
     tinyrick_extras::clippy();
 }
 
 /// Validate documentation and run linters
+#[task]
 fn lint() {
-    tinyrick::deps(doc);
-    tinyrick::deps(clippy);
+    deps!(doc);
+    deps!(clippy);
 }
 
 /// Install binaries
+#[task]
 fn install() {
     tinyrick_extras::install_binaries();
 }
 
 /// Uninstall binaries
+#[task]
 fn uninstall() {
     tinyrick_extras::uninstall_binaries();
 }
 
 /// Doc, lint and run tests
+#[task]
 fn test() {
-    tinyrick::deps(lint);
-    tinyrick::deps(install);
+    deps!(lint);
+    deps!(install);
     tinyrick_extras::unit_test();
-    tinyrick::exec!("fizzbuzz");
-}
-
-/// Build: Doc, lint, test, and compile
-fn build() {
-    tinyrick::deps(test);
-    tinyrick_extras::build();
+    exec!("fizzbuzz");
 }
 
 /// Prepare cross-platform release media.
+#[task]
 fn port() {
     let b = &banner();
     tinyrick_extras::crit(&vec!["-b", b]);
-    tinyrick_extras::chandler(".crit/bin", b);
+    tinyrick_extras::chandler(&format!(".crit{}bin", std::path::MAIN_SEPARATOR_STR), b);
 }
 
 /// Publish to crate repository
+#[task]
 fn publish() {
     tinyrick_extras::publish();
 }
 
 /// CLI entrypoint
 fn main() {
-    tinyrick::phony!(clean);
-
-    tinyrick::wubba_lubba_dub_dub!(
-        build;
-        doc,
-        audit,
-        cargo_check,
-        clean,
-        clean_ports,
-        clippy,
-        install,
-        lint,
-        port,
-        publish,
-        test,
-        uninstall
-    );
+    run();
 }

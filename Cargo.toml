@@ -9,10 +9,18 @@ repository = "https://github.com/mcandre/tinyrick_extras"
 documentation = "https://docs.rs/releases/search?query=tinyrick_extras"
 
 [dependencies]
-tinyrick = "0.0.19"
+ctor = { version = "0.6.2", optional = true }
+die = "0.2.0"
+tinyrick = "0.0.20"
+tinyrick_macros = { version = "0.0.3", optional = true }
+tinyrick_models = { version = "0.0.2", optional = true }
 
 [features]
-letmeout = []
+letmeout = [
+    "ctor",
+    "tinyrick_macros",
+    "tinyrick_models",
+]
 
 [lib]
 name = "tinyrick_extras"
