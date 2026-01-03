@@ -48,6 +48,7 @@ BSD-2-Clause
 * [chandler](https://github.com/mcandre/chandler)
 * [crit](https://github.com/mcandre/crit) ports Rust applications
 * [direnv](https://direnv.net/) 2
+* [tuggy](https://github.com/mcandre/tuggy)
 
 # CONTRIBUTING
 

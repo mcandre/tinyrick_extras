@@ -82,6 +82,11 @@ pub fn rustfmt() {
     tinyrick::exec!("cargo", "fmt");
 }
 
+/// Build multiplatform Docker images.
+pub fn tuggy(args: &[&str]) {
+    tinyrick::exec("tuggy", args);
+}
+
 /// Uninstall artifacts
 pub fn uninstall_binaries() {
     tinyrick::exec!("cargo", "uninstall");
