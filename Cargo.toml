@@ -1,9 +1,9 @@
 [package]
 name = "tinyrick_extras"
 description = "common tasks for tinyrick projects"
-version = "0.0.14"
+version = "0.0.15"
 edition = "2024"
-authors = ["Andrew Pennebaker <andrew.pennebaker@gmail.com>"]
+authors = ["Andrew Pennebaker <n4jm4@pm.me>"]
 license = "BSD-2-Clause"
 repository = "https://github.com/mcandre/tinyrick_extras"
 documentation = "https://docs.rs/releases/search?query=tinyrick_extras"
