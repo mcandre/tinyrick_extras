@@ -1,5 +1,11 @@
 # tinyrick_extras: common tasks for tinyrick projects
 
+[![Donate](https://img.shields.io/badge/GUMROAD-36a9ae?style=flat&logo=gumroad&logoColor=white)](https://mcandre.gumroad.com/)
+
+# SUMMARY
+
+tinyrick_extras provides prebaked tasks for common Rust software project developer needs.
+
 # EXAMPLE
 
 ```console
