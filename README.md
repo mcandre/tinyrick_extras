@@ -1,6 +1,6 @@
 # tinyrick_extras: common tasks for tinyrick projects
 
-[![Donate](https://img.shields.io/badge/GUMROAD-36a9ae?style=flat&logo=gumroad&logoColor=white)](https://mcandre.gumroad.com/)
+[![Crates.io Downloads (latest version)](https://img.shields.io/crates/dv/tinyrick_extras?label=crate%20downloads)](https://crates.io/crates/tinyrick_extras) [![docs.rs](https://img.shields.io/docsrs/tinyrick_extras)](https://docs.rs/tinyrick_extras/latest/tinyrick_extras/) [![license](https://img.shields.io/badge/license-BSD-3)](LICENSE.md) [![Donate](https://img.shields.io/badge/GUMROAD-36a9ae?style=flat&logo=gumroad&logoColor=white)](https://mcandre.gumroad.com/)
 
 # SUMMARY
 
@@ -29,18 +29,6 @@ Buzz
 tinyrick_extras defines some common tasks, such as unit tests, linting, generating API documentation, publishing packages, installing and uninstalling packages, for your [tinyrick](https://github.com/mcandre/tinyrick) projects. Boom. Take what works for your build workflow, leave the rest.
 
 Check out the [example](example) project.
-
-# CRATE
-
-https://crates.io/crates/tinyrick_extras
-
-# API DOCUMENTATION
-
-https://docs.rs/tinyrick_extras/latest/tinyrick_extras/
-
-# LICENSE
-
-BSD-2-Clause
 
 # RUNTIME REQUIREMENTS
 
