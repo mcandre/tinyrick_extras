@@ -30,7 +30,7 @@ tinyrick_extras defines some common tasks, such as unit tests, linting, generati
 
 Check out the [example](example) project.
 
-# RUNTIME REQUIREMENTS
+# SYSTEM REQUIREMENTS
 
 * [Rust](https://www.rust-lang.org/en-US/)
 * [tinyrick](https://github.com/mcandre/tinyrick)
@@ -38,12 +38,8 @@ Check out the [example](example) project.
 ## Recommended
 
 * [ASDF](https://asdf-vm.com/) 0.18 (run `asdf reshim` after each Rust application binary installation)
-* [cargo-cache](https://crates.io/crates/cargo-cache)
-* [chandler](https://github.com/mcandre/chandler)
 * [crit](https://github.com/mcandre/crit) ports Rust applications
-* [direnv](https://direnv.net/) 2
-* [tuggy](https://github.com/mcandre/tuggy)
 
-# CONTRIBUTING
+# DEVELOPMENT
 
-For more details on developing tinyrick_extras itself, see [DEVELOPMENT.md](DEVELOPMENT.md).
+For more details on developing tinyrick_extras, see our [development guide](DEVELOPMENT.md).

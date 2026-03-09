@@ -1,6 +1,8 @@
-# OVERVIEW
+# DEVELOPMENT GUIDE
 
-tinyrick_extras' own compilation process is compatible with standard cargo. We wrap some common workflows with tinyrick tasks for convenience.
+tinyrick_extras follows standard, cargo based operations for compiling and unit testing Rust code.
+
+For advanced operations, such as linting, we further supplement with some software industry tools.
 
 # BUILDTIME REQUIREMENTS
 
@@ -12,7 +14,6 @@ tinyrick_extras' own compilation process is compatible with standard cargo. We w
 ## Recommended
 
 * [ASDF](https://asdf-vm.com/) 0.18 (run `asdf reshim` after provisioning)
-* [direnv](https://direnv.net/) 2
 
 # SECURITY AUDIT
 
