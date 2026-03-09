@@ -42,4 +42,4 @@ Check out the [example](example) project.
 
 # DEVELOPMENT
 
-For more details on developing tinyrick_extras, see our [development guide](DEVELOPMENT.md).
+For details on developing tinyrick_extras, see our [development guide](DEVELOPMENT.md).
