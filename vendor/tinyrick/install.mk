@@ -1,20 +1,19 @@
 .POSIX:
 .SILENT:
-.PHONY: \
-	all \
-	crates \
-	rustup-components
+.PHONY: all
 
-all: crates rustup-components
-
-crates:
+all:
 	cargo install --force \
 		cargo-audit \
-		crit@0.0.8 \
-		cross@0.2.5 \
-		unmake@0.0.18
-
-rustup-components:
+		cargo-cache \
+		cargo-edit \
+		chandler@0.0.5 \
+		crit@0.0.12 \
+		tuggy@0.0.28
+	cargo install --force \
+		cross \
+			--git https://github.com/cross-rs/cross \
+			--rev 4e64366af6095c84fa4f54a0fa5a2ba7d9a271aa
 	rustup component add \
 		clippy \
 		rustfmt
