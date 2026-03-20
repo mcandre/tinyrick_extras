@@ -1,52 +1,67 @@
-# DEVELOPMENT GUIDE
+# DEVELOPMENT
 
 tinyrick_extras follows standard, cargo based operations for compiling and unit testing Rust code.
 
 For advanced operations, such as linting, we further supplement with some software industry tools.
 
-# BUILDTIME REQUIREMENTS
+# DEV ENVIRONMENT
 
-* a UNIX-like environment (e.g. [WSL](https://learn.microsoft.com/en-us/windows/wsl/))
-* POSIX compliant [make](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html)
+## Prerequisities
+
+* [make](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html)
 * [Rust](https://www.rust-lang.org/en-US/)
-* Provision additional dev tools with `make`
+* Provision additional dev tools with `make -f install.mk`
 
 ## Recommended
 
-* [ASDF](https://asdf-vm.com/) 0.18 (run `asdf reshim` after provisioning)
+* [asdf](https://asdf-vm.com/)
 
-# SECURITY AUDIT
+## Postinstall
 
-```console
-$ tinyrick audit
+Register `~/.cargo/bin` to `PATH` environment variable.
+
+# TASKS
+
+We automate engineering tasks.
+
+## Build
+
+```sh
+tinyrick
 ```
 
-# LINT
+## Security Audit
 
-```console
-$ tinyrick lint
+```sh
+tinyrick audit
 ```
 
-# TEST
+## Lint
 
-```console
-$ tinyrick test
+```sh
+tinyrick lint
 ```
 
-# DOCUMENT API
+## Test
 
-```console
-$ tinyrick doc
+```sh
+tinyrick test
 ```
 
-# PUBLISH
+## Generate API Docs
 
-```console
-$ tinyrick publish
+```sh
+tinyrick doc
 ```
 
-# CLEAN
+## Publish Crate
 
-```console
-$ tinyrick clean
+```sh
+tinyrick publish
+```
+
+## Clean Workspace
+
+```sh
+tinyrick clean
 ```

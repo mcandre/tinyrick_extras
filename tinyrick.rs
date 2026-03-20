@@ -9,7 +9,6 @@ use std::path;
 /// Build: Doc, lint, test, and compile
 #[default_task]
 fn build() {
-    deps!(test);
     tinyrick_extras::build();
 }
 
@@ -83,7 +82,6 @@ fn rustfmt() {
 /// Doc, lint, and run tests
 #[task]
 fn test() {
-    deps!(lint);
     tinyrick_extras::unit_test();
 }
 
