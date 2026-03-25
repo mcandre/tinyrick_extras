@@ -35,10 +35,6 @@ letmeout = [
 name = "tinyrick_extras"
 
 [[bin]]
-name = "derp"
-path = "src/derp.rs"
-
-[[bin]]
 name = "tinyrick"
 path = "tinyrick.rs"
 required-features = ["letmeout"]
