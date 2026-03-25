@@ -20,9 +20,9 @@ exclude = [
 [dependencies]
 ctor = { version = "0.6.2", optional = true }
 die = "0.2.0"
-tinyrick = "0.0.24"
-tinyrick_macros = { version = "0.0.3", optional = true }
-tinyrick_models = { version = "0.0.2", optional = true }
+tinyrick = "0.0.26"
+tinyrick_macros = { version = "0.0.4", optional = true }
+tinyrick_models = { version = "0.0.3", optional = true }
 
 [features]
 letmeout = [
@@ -33,6 +33,10 @@ letmeout = [
 
 [lib]
 name = "tinyrick_extras"
+
+[[bin]]
+name = "derp"
+path = "src/derp.rs"
 
 [[bin]]
 name = "tinyrick"

@@ -12,9 +12,18 @@
 [package]
 edition = "2024"
 name = "tinyrick"
-version = "0.0.24"
+version = "0.0.26"
 authors = ["Andrew Pennebaker <n4jm4@pm.me>"]
 build = false
+exclude = [
+    "*.mk",
+    ".editorconfig",
+    ".github",
+    ".rubberstamp",
+    ".tool-versions",
+    "example",
+    "makefile",
+]
 autolib = false
 autobins = false
 autoexamples = false
@@ -23,7 +32,7 @@ autobenches = false
 description = "a freeform Rust build system"
 documentation = "https://docs.rs/tinyrick/"
 readme = "README.md"
-license = "BSD-2-Clause"
+license = "0BSD"
 repository = "https://github.com/mcandre/tinyrick"
 
 [lib]
@@ -54,7 +63,10 @@ version = "2.0.111"
 features = ["full"]
 
 [dependencies.tinyrick_macros]
-version = "0.0.3"
+version = "0.0.4"
 
 [dependencies.tinyrick_models]
-version = "0.0.2"
+version = "0.0.3"
+
+[profile.release]
+strip = "symbols"

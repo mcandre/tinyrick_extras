@@ -1,12 +1,10 @@
 # DEVELOPMENT
 
-tinyrick follows standard, cargo based operations for compiling and unit testing Rust code.
+tinyrick_macros follows standard, cargo based operations for compiling and unit testing Rust code.
 
 For advanced operations, such as linting, we further supplement with some software industry tools.
 
-# DEV ENVIRONMENT
-
-## Prerequisites
+# BUILDTIME REQUIREMENTS
 
 * [make](https://pubs.opengroup.org/onlinepubs/9799919799/utilities/make.html)
 * [Rust](https://www.rust-lang.org/en-US/)
@@ -28,18 +26,6 @@ We automate engineering tasks.
 
 ```sh
 make
-```
-
-## Install
-
-```sh
-make install
-```
-
-## Uninstall
-
-```sh
-make uninstall
 ```
 
 ## Security Audit
