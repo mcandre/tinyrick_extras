@@ -1,58 +1,76 @@
-# OVERVIEW
+# DEVELOPMENT
 
-fizzy's own compilation process is compatible with standard `cargo`. We wrap some common workflows with `tinyrick` tasks for convenience.
+We follow standard, cargo based operations for compiling and unit testing Rust code.
 
-# BUILDTIME REQUIREMENTS
+For advanced operations, such as linting, we further supplement with some software industry tools.
 
-* [Rust](https://www.rust-lang.org/en-US/) 1.92.0+
+# DEV ENVIRONMENT
+
+## Prerequisites
+
+* [Rust](https://www.rust-lang.org/en-US/)
 * [cargo-audit](https://crates.io/crates/cargo-audit)
 * [clippy](https://github.com/rust-lang-nursery/rust-clippy)
 * [tinyrick](https://github.com/mcandre/tinyrick) (e.g., `cargo install tinyrick`)
 
-# INSTALL BINARIES FROM LOCAL SOURCE
+## Postinstall
 
-```console
-$ tinyrick install
+Register `~/.cargo/bin` to `PATH` environment variable.
+
+# TASKS
+
+We automate engineering tasks.
+
+## Build
+
+```sh
+tinyrick
 ```
 
-# UNINSTALL BINARIES
+## Install
 
-```console
-$ tinyrick uninstall
+```sh
+tinyrick install
 ```
 
-# SECURITY AUDIT
+# Uninstall
 
-```console
-$ tinyrick audit
+```sh
+tinyrick uninstall
 ```
 
-# LINT
+## Security Audit
 
-```console
-$ tinyrick lint
+```sh
+tinyrick audit
 ```
 
-# TEST
+## Lint
 
-```console
-$ tinyrick test
+```sh
+tinyrick lint
 ```
 
-# DOCUMENT API
+## Test
 
-```console
-$ tinyrick doc
+```sh
+tinyrick test
 ```
 
-# PUBLISH
+## Generate API Docs
 
-```console
-$ tinyrick publish
+```sh
+tinyrick doc
 ```
 
-# CLEAN
+## Publish Crate
 
-```console
-$ tinyrick clean
+```sh
+tinyrick publish
+```
+
+## Clean Workspace
+
+```sh
+tinyrick clean
 ```

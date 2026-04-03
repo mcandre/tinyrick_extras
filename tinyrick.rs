@@ -6,16 +6,16 @@ use tinyrick_extras;
 use std::fs;
 use std::path;
 
-/// Build: Doc, lint, test, and compile
-#[default_task]
-fn build() {
-    tinyrick_extras::build();
-}
-
 /// Security audit
 #[task]
 fn audit() {
     tinyrick_extras::cargo_audit();
+}
+
+/// Build: Compile
+#[default_task]
+fn build() {
+    tinyrick_extras::build();
 }
 
 /// Run cargo check

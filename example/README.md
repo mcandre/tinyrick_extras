@@ -19,6 +19,4 @@ Buzz
 
 (None)
 
-# CONTRIBUTING
-
-For more details on developing fizzy itself, see [DEVELOPMENT.md](DEVELOPMENT.md).
+For details on building from source, see [DEVELOPMENT](DEVELOPMENT.md).

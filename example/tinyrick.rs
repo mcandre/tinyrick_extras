@@ -3,28 +3,16 @@
 use tinyrick::*;
 use tinyrick_extras;
 
-/// Build: Doc, lint, test, and compile
-#[default_task]
-fn build() {
-    deps!(test);
-    tinyrick_extras::build();
-}
-
-/// Generate documentation
-#[task]
-fn doc() {
-    tinyrick_extras::build();
-}
-
 /// Security audit
 #[task]
 fn audit() {
     tinyrick_extras::cargo_audit();
 }
 
-/// banner generates artifact labels.
-fn banner() -> String {
-    format!("{}-{}", env!("CARGO_PKG_NAME"), env!("CARGO_PKG_VERSION"))
+/// Build: Compile
+#[default_task]
+fn build() {
+    tinyrick_extras::build();
 }
 
 /// Run cargo check
@@ -40,23 +28,16 @@ fn clean() {
     tinyrick_extras::clean_cargo();
 }
 
-/// Clean precompiled binaries
-#[task]
-fn clean_ports() {
-    exec!("crit", "-c");
-}
-
 /// Run clippy
 #[task]
 fn clippy() {
     tinyrick_extras::clippy();
 }
 
-/// Validate documentation and run linters
+/// Generate documentation
 #[task]
-fn lint() {
-    deps!(doc);
-    deps!(clippy);
+fn doc() {
+    tinyrick_extras::build();
 }
 
 /// Install binaries
@@ -65,10 +46,24 @@ fn install() {
     tinyrick_extras::install_binaries();
 }
 
-/// Uninstall binaries
+/// Validate documentation and run linters
 #[task]
-fn uninstall() {
-    tinyrick_extras::uninstall_binaries();
+fn lint() {
+    deps!(doc);
+    deps!(clippy);
+    deps!(rustfmt);
+}
+
+/// Publish to crate repository
+#[task]
+fn publish() {
+    tinyrick_extras::publish();
+}
+
+/// Run rustfmt
+#[task]
+fn rustfmt() {
+    tinyrick_extras::rustfmt();
 }
 
 /// Doc, lint and run tests
@@ -80,18 +75,10 @@ fn test() {
     exec!("fizzbuzz");
 }
 
-/// Prepare cross-platform release media.
+/// Uninstall binaries
 #[task]
-fn port() {
-    let b = &banner();
-    tinyrick_extras::crit(&vec!["-b", b]);
-    tinyrick_extras::chandler(&format!(".crit{}bin", std::path::MAIN_SEPARATOR_STR), b);
-}
-
-/// Publish to crate repository
-#[task]
-fn publish() {
-    tinyrick_extras::publish();
+fn uninstall() {
+    tinyrick_extras::uninstall_binaries();
 }
 
 /// CLI entrypoint
