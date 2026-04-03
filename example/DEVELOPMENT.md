@@ -1,17 +1,15 @@
 # DEVELOPMENT
 
-We follow standard, cargo based operations for compiling and unit testing Rust code.
+We follow standard, `cargo` based operations for compiling and unit testing Rust code.
 
 For advanced operations, such as linting, we further supplement with some software industry tools.
 
-# DEV ENVIRONMENT
-
-## Prerequisites
+# PREREQUISITES
 
 * [Rust](https://www.rust-lang.org/en-US/)
 * [cargo-audit](https://crates.io/crates/cargo-audit)
 * [clippy](https://github.com/rust-lang-nursery/rust-clippy)
-* [tinyrick](https://github.com/mcandre/tinyrick) (e.g., `cargo install tinyrick`)
+* [tinyrick](https://github.com/mcandre/tinyrick)
 
 ## Postinstall
 
