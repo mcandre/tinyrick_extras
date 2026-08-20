@@ -2,25 +2,6 @@
 
 extern crate tinyrick;
 
-/// Compress release media with chandler.
-///
-/// artifacts_path denotes a build directory root,
-/// where a software project houses porting artifacts.
-///
-/// port_basename denotes an archive directory root within the artifacts_path,
-/// generally of the form "<app-name>-<version>".
-pub fn chandler(artifacts_path: &str, port_basename: &str) {
-    let archive_basename: &str = &format!("{}.tgz", port_basename);
-    tinyrick::exec!(
-        "chandler",
-        "-C",
-        artifacts_path,
-        "-czf",
-        archive_basename,
-        port_basename,
-    );
-}
-
 /// Build all binaries
 pub fn build() {
     tinyrick::deps!(build_debug);
@@ -80,11 +61,6 @@ pub fn publish() {
 /// Run rustfmt
 pub fn rustfmt() {
     tinyrick::exec!("cargo", "fmt");
-}
-
-/// Build multiplatform Docker images.
-pub fn tuggy(args: &[&str]) {
-    tinyrick::exec("tuggy", args);
 }
 
 /// Uninstall artifacts

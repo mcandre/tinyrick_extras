@@ -5,6 +5,7 @@ use tinyrick_extras;
 
 use std::fs;
 use std::path;
+use std::process;
 
 /// Security audit
 #[task]
@@ -27,8 +28,8 @@ fn cargo_check() {
 /// Clean workspaces
 #[task]
 fn clean() {
-    deps!(clean_cargo);
     deps!(clean_example);
+    deps!(clean_cargo);
 }
 
 /// Clean cargo
@@ -56,6 +57,15 @@ fn clippy() {
 #[task]
 fn doc() {
     tinyrick_extras::build();
+}
+
+/// Integration test
+#[task]
+fn itest() {
+    process::Command::new("tinyrick")
+        .current_dir("example")
+        .status()
+        .unwrap();
 }
 
 /// Validate documentation and run linters

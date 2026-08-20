@@ -7,7 +7,7 @@ all:
 		cargo-audit \
 		cargo-cache \
 		cargo-edit \
-		tinyrick@0.0.26
+		tinyrick@0.0.27
 	rustup component add \
 		clippy \
 		rustfmt

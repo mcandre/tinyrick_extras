@@ -18,10 +18,10 @@ exclude = [
 ]
 
 [dependencies]
-ctor = { version = "0.6.2", optional = true }
+ctor = { version = "1.0.13", optional = true }
 die = "0.2.0"
-tinyrick = "0.0.26"
-tinyrick_macros = { version = "0.0.4", optional = true }
+tinyrick = "0.0.30"
+tinyrick_macros = { version = "0.0.6", optional = true }
 tinyrick_models = { version = "0.0.3", optional = true }
 
 [features]

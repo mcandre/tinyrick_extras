@@ -24,7 +24,6 @@ fn cargo_check() {
 /// Clean workspaces
 #[task]
 fn clean() {
-    deps!(clean_ports);
     tinyrick_extras::clean_cargo();
 }
 
