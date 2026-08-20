@@ -40,10 +40,16 @@ tinyrick audit
 tinyrick lint
 ```
 
-## Test
+## Unit Test
 
 ```sh
 tinyrick test
+```
+
+## Integration Test
+
+```sh
+tinyrick itest
 ```
 
 ## Generate API Docs
